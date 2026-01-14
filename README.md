@@ -1,59 +1,178 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🎓 School Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern web application for managing schools and students built with **Laravel 12**.
 
-## About Laravel
+![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4?style=flat-square&logo=php&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?style=flat-square&logo=laravel&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?style=flat-square&logo=mysql&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-Build-646CFF?style=flat-square&logo=vite&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📖 About
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+This is a **School Management System** designed to efficiently manage educational institutions and their students. The application provides a complete CRUD (Create, Read, Update, Delete) interface for managing student information across multiple schools.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Key Features
 
-## Learning Laravel
+- 🏫 **School Management** - Register and manage multiple schools with principal and address information
+- 👨‍🎓 **Student Management** - Full CRUD operations for student records
+- 🔗 **Relationship Handling** - One-to-many relationship between schools and students
+- ✅ **Form Validation** - Server-side validation for all input data
+- 📄 **Pagination** - Efficient data display with pagination support
+- 🎨 **Modern UI** - Clean, responsive interface using Blade templates
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 🛠️ Tech Stack
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+| Category | Technology |
+|----------|------------|
+| **Backend** | PHP 8.2+, Laravel 12 |
+| **Database** | MySQL |
+| **Frontend** | Blade Templates, Vite |
+| **Testing** | Pest PHP |
+| **Development** | Laravel Sail, Laravel Pint |
 
-## Laravel Sponsors
+## 📁 Project Structure
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```
+├── app/
+│   ├── Http/Controllers/
+│   │   └── StudentController.php    # Student CRUD operations
+│   └── Models/
+│       ├── School.php               # School model with hasMany relationship
+│       └── Student.php              # Student model with belongsTo relationship
+├── database/
+│   ├── factories/                   # Model factories for testing
+│   └── migrations/                  # Database schema migrations
+├── resources/
+│   └── views/
+│       ├── layouts/                 # Base layout templates
+│       └── students/                # Student views (index, create, edit)
+└── routes/
+    └── web.php                      # Web routes with resource controller
+```
 
-### Premium Partners
+## 🚀 Installation
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### Prerequisites
 
-## Contributing
+- PHP 8.2 or higher
+- Composer
+- Node.js & npm
+- MySQL
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Quick Setup
 
-## Code of Conduct
+```bash
+# Clone the repository
+git clone <repository-url>
+cd EXAM2026.1B
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Run the setup script
+composer setup
+```
 
-## Security Vulnerabilities
+### Manual Setup
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+# Install PHP dependencies
+composer install
 
-## License
+# Copy environment file
+cp .env.example .env
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Generate application key
+php artisan key:generate
+
+# Configure your database in .env file
+# DB_DATABASE=SchoolManagement
+# DB_USERNAME=root
+# DB_PASSWORD=
+
+# Run migrations
+php artisan migrate
+
+# Install frontend dependencies
+npm install
+
+# Build assets
+npm run build
+```
+
+## 💻 Usage
+
+### Development Server
+
+```bash
+# Start all services (server, queue, vite) concurrently
+composer dev
+```
+
+Or run services separately:
+
+```bash
+# Start Laravel server
+php artisan serve
+
+# In another terminal, run Vite
+npm run dev
+```
+
+### Running Tests
+
+```bash
+composer test
+```
+
+## 📊 Database Schema
+
+### Schools Table
+
+| Column | Type | Description |
+|--------|------|-------------|
+| id | bigint | Primary key |
+| name | varchar | School name (unique) |
+| principal | varchar | Principal's name |
+| address | varchar | School address |
+| timestamps | - | created_at, updated_at |
+
+### Students Table
+
+| Column | Type | Description |
+|--------|------|-------------|
+| id | bigint | Primary key |
+| school_id | bigint | Foreign key to schools |
+| full_name | varchar | Student's full name |
+| student_id | varchar | Student ID (unique) |
+| email | varchar | Email address (unique) |
+| phone | varchar | Phone number (nullable) |
+| timestamps | - | created_at, updated_at |
+
+## 🔒 Validation Rules
+
+### Student Creation/Update
+
+- **full_name**: Required, string
+- **student_id**: Required, unique
+- **email**: Required, valid email, unique
+- **phone**: Optional, numeric
+- **school_id**: Required, must exist in schools table
+
+## 📝 API Routes
+
+| Method | URI | Action | Description |
+|--------|-----|--------|-------------|
+| GET | `/students` | index | List all students |
+| GET | `/students/create` | create | Show create form |
+| POST | `/students` | store | Create new student |
+| GET | `/students/{id}/edit` | edit | Show edit form |
+| PUT | `/students/{id}` | update | Update student |
+| DELETE | `/students/{id}` | destroy | Delete student |
+
+## 📄 License
+
+This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+---
+
+**Author**: [Your Name]  
+**Date**: January 2026
