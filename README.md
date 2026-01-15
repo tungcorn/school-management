@@ -174,5 +174,5 @@ This project is open-sourced software licensed under the [MIT license](https://o
 
 ---
 
-**Author**: [Your Name]  
+**Author**: tungcorn  
 **Date**: January 2026
